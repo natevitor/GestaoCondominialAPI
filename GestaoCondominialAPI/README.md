@@ -32,7 +32,7 @@ Clone o Repositório:
 
 bash
 Copiar código
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/natevitor/GestaoCondominialAPI.git
 cd seu-repositorio
 Restaurar Dependências:
 
@@ -47,7 +47,7 @@ json
 Copiar código
 {
   "ConnectionStrings": {
-    "DefaultConnection": "User Id=RM550381;Password=221103;Data Source=localhost:1521/ORCL;"
+    "DefaultConnection": "User Id=RM550381;Password=221103;Data Source=//Oracle.fiap.com.br:1521/ORCL;"
   },
   "Logging": {
     "LogLevel": {

@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,12 +12,12 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+// Configurar a string de conexão para o Oracle
+string oracleConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//                    options.UseMySql(mySqlConnection,
-//                    ServerVersion.AutoDetect(mySqlConnection)));
-
+// Configurar o DbContext para usar o Oracle
+builder.Services.AddDbContext<MeuDbContext>(options =>
+    options.UseOracle(oracleConnection));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

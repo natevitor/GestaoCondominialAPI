@@ -9,11 +9,9 @@ public class MeuDbContext : DbContext {
     public DbSet<Morador> Moradores { get; set; }
     public DbSet<Pagamento> Pagamentos { get; set; }
 
-    // Configure the relationships and table mappings here, if necessary
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
 
-        // Example of configuring relationships
         modelBuilder.Entity<Condominio>()
             .HasMany(c => c.Moradores)
             .WithOne(m => m.Condominio)
@@ -24,6 +22,5 @@ public class MeuDbContext : DbContext {
             .WithOne(p => p.Condominio)
             .HasForeignKey(p => p.CondominioId);
 
-        // Additional configurations for other entities, if necessary
     }
 }
